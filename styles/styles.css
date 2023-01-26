@@ -1,0 +1,27 @@
+body {
+    background-color: azure;
+}
+
+h1, h3 {
+    text-align: center;
+}
+#row2 {
+    padding-top: 5%;
+}
+
+img {
+    border-radius: 3%;
+}
+
+.quote {
+    font-style: italic;
+}
+
+#buttonTop {
+    text-align: center;
+    padding-top: 5%;
+}
+
+.buttonBottom {
+    text-align: center;
+}

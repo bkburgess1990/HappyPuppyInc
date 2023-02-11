@@ -27,9 +27,17 @@ img {
 }
 #form
 {
-    text-align: center;
+    padding-left:100px;
 }
 .border
 {
     border-right:4px solid black;
+}
+.buttonBottom
+{
+    padding-right:125px;
+}
+#tableTwo
+{
+    border-bottom: 2px solid;
 }

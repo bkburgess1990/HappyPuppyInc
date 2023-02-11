@@ -2,9 +2,9 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-6" id="form">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 order-2"id="form">
             <form>
-                <h1>Please Fill This Form To Settle An Animal</h1>
+                <h1>Please Fill This Form To surrender An Animal</h1>
                 <!-- First name-->
                 <div>
                     <label for="fname">First name: <span ng-show="vm.item.required" class="text-danger">*</span></label>
@@ -54,17 +54,17 @@
                            min="2022-10-06" max="2023-10-06">
                 </div>
                 <!--leave a message-->
-                <div style = " text-align: left;">
+                <div>
                     <label for="message"><strong>Leave a Message</strong></label>
                     <br>
-                    <textarea id="message" name="message" rows="9" cols="100"></textarea>
+                    <textarea id="message" name="message" rows="4" cols="50"></textarea>
                 </div>
-                <div style = "padding-right:125px;">
+                <div id = "buttonBottom">
                     <button type="submit" class="btn btn-secondary btn-block" id = "buttonEx"> Submit </button>
                 </div>
             </form>
         </div>
-        <div class = "col-6">
+        <div class = "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 order-1">
             <br>
             <br>
             <p>We are so sorry you have come to a point where you may need to rehome your friend.</p>
@@ -82,7 +82,7 @@
             <!--Table -->
             <div>
             <table class = "data-table">
-                <thead class = "table" style = "border-bottom: 2px solid;">
+                <thead id = "tableTwo">
                     <tr>
                         <th> $40 per Animal</th>
                         <th> $75 per Animal</th>
@@ -99,7 +99,7 @@
                         </td>
                         <td class = "border">
                             <p>Large dog over 25 lbs,</p>
-                            <p>Large dog over 3 feet</p>
+                            <p>Large dog over 5 feet</p>
                             <p>Large Lizards (except Green Iguanas)</p>
                         </td>
                         <td class = "border">
@@ -111,6 +111,11 @@
                 </tbody>
             </table>
             </div>
+            <!--message-->
+            <hr>
+            <div>
+                <p><strong>To make a drop-off appointment, please call xxx-xxx-xxxx</strong></p>
+                </div>
         </div>
     </div>
 </div>

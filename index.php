@@ -36,11 +36,11 @@ $f3->route('GET|POST /apply', function () {
 });
 
 //define Application route
-$f3->route('GET|POST /Form', function () {
+$f3->route('GET|POST /form', function () {
 
     //instantiate a view
     $view = new Template();
-    echo $view->render("views/Form.html");
+    echo $view->render("views/form.html");
 });
 
 

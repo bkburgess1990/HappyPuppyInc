@@ -41,3 +41,11 @@ img {
 {
     border-bottom: 2px solid;
 }
+
+.footer h4 {
+    text-align: center;
+}
+
+#footerStyles body {
+    background-color: blue;
+}

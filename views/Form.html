@@ -1,47 +1,118 @@
 <include href="views/header.html"></include>
 <body>
-    <div class= "container-fluid">
-        <div class = "row">
-            <div class = "col-12" style = "text-align: center">
-                <h1>Ready to adopt?</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6" id="form">
+            <form>
+                <h1>Please Fill This Form To Settle An Animal</h1>
                 <!-- First name-->
                 <div>
-                    <label for = "fname">123 name: <span ng-show = "vm.item.required" class = "text-danger">*</span></label>
+                    <label for="fname">First name: <span ng-show="vm.item.required" class="text-danger">*</span></label>
                     <br>
-                    <input type = "text" id="fname" name ="fname" placeholder="Please provide your first name" required = "required">
+                    <input type="text" id="fname" name="fname"
+                           required="required">
                 </div>
 
                 <!--Last name-->
                 <br> <!-- Line break-->
                 <div>
-                    <label for ="lname"> Last Name: <span ng-show = "vm.item.required" class = "text-danger">*</span></label>
+                    <label for="lname"> Last Name: <span ng-show="vm.item.required" class="text-danger">*</span></label>
                     <br>
-                    <input type = "text" id="lname" name = "lname" placeholder="Please provide your last name">
+                    <input type="text" id="lname" name="lname">
                 </div>
                 <div> <!-- Email Input + Drop Box for @-->
                     <br> <!-- Line break-->
-                    <label for="email">Email <span ng-show = "vm.item.required" class = "text-danger">*</span> </label>
+                    <label for="email">Email <span ng-show="vm.item.required" class="text-danger">*</span> </label>
                     <br>
-                    <input type="email" id="email" name="email" placeholder="Please provide your email address">
+                    <input type="email" id="email" name="email">
                 </div>
                 <br> <!-- Line break-->
                 <div>
-                    <label for="phone">Phone <span ng-show = "vm.item.required" class = "text-danger">*</span> </label>
+                    <label for="phone">Phone <span ng-show="vm.item.required" class="text-danger">*</span> </label>
                     <br>
-                    <input  placeholder="Please provide your phone number" type="tel" id="phone" name="phone" >
+                    <input  type="tel" id="phone" name="phone">
                 </div>
 
+                <!--Address-->
+                <div>
+                    <label for="address">Address <span ng-show="vm.item.required" class="text-danger">*</span> </label>
+                    <br>
+                    <input  type="address" id="address" name="address">
+                </div>
+                <!--find-->
+                <div>
+                    <label for="find"> Where did you find this Animal <span ng-show="vm.item.required" class="text-danger">*</span> </label>
+                    <br>
+                    <input type="find" id="find" name="find">
+                </div>
                 <!--Date-->
                 <div>
-                    <label for="start">Date: <span ng-show = "vm.item.required" class = "text-danger">*</span> </label>
+                    <label for="start">Date: <span ng-show="vm.item.required" class="text-danger">*</span> </label>
                     <br>
-                    <input  placeholder="Please provide your phone number" type="date" id="start" name="trip-start"
-                            value="Select date"
-                            min="2022-10-06" max="2023-10-06">
+                    <input type="date" id="start" name="trip-start"
+                           value="Select date"
+                           min="2022-10-06" max="2023-10-06">
                 </div>
-                </form>
+                <!--leave a message-->
+                <div style = " text-align: left;">
+                    <label for="message"><strong>Leave a Message</strong></label>
+                    <br>
+                    <textarea id="message" name="message" rows="9" cols="100"></textarea>
+                </div>
+                <div style = "padding-right:125px;">
+                    <button type="submit" class="btn btn-secondary btn-block" id = "buttonEx"> Submit </button>
+                </div>
+            </form>
+        </div>
+        <div class = "col-6">
+            <br>
+            <br>
+            <p>We are so sorry you have come to a point where you may need to rehome your friend.</p>
+            <p>We are here to help!</p
+            <p>Below you will find two options to try before surrendering your animal to HappyPuppyInc:</p>
+            <p><strong>1. Rehome with a friend or family member you</strong></p>
+            <p>trust. This can be a great way to see your friend and keep them close.</p>
+            <p><strong>2. Rehome through an online resource, such as an Arizona-based reptile Facebook group.</strong></p>
+            <p>There are a few groups on Facebook that you can rehome your animal on. We recommend you</p>
+            <p>do not give the animal away for free, as sometimes those animals get resold for a profit. Make</p>
+            <p>sure that the person who is taking in the animal understands the care and financial needs that</p>
+            <p>animals require.</p>
+            <h4>Surrender Price</h4>
+            <hr>
+            <!--Table -->
+            <div>
+            <table class = "data-table">
+                <thead class = "table" style = "border-bottom: 2px solid;">
+                    <tr>
+                        <th> $40 per Animal</th>
+                        <th> $75 per Animal</th>
+                        <th> $100 per Animal</th>
+                        <th> TBD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class = "border">
+                            <p>Aquatic Turtles (Red Eared Sliders),</p>
+                            <p>Small/Medium dog under 5 feet, </p>
+                            <p>Small/Medium dog  under 25 lbs)</p>
+                        </td>
+                        <td class = "border">
+                            <p>Large dog over 25 lbs,</p>
+                            <p>Large dog over 3 feet</p>
+                            <p>Large Lizards (except Green Iguanas)</p>
+                        </td>
+                        <td class = "border">
+                            <p>Green Iguanas</p>
+                            <p>British short-hair</p>
+                            <p>Labrador</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

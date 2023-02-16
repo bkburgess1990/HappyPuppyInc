@@ -75,6 +75,14 @@ $f3->route('GET|POST /Stats', function () {
     echo $view->render("views/Stats.html");
 });
 
+//define Statistics route
+$f3->route('GET|POST /contact', function () {
+
+    //instantiate a view
+    $view = new Template();
+    echo $view->render("views/contact.html");
+});
+
 
 //run fat free
 $f3->run();

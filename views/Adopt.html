@@ -40,19 +40,28 @@ to see more info about the dog
                     <br>
                     <input  type="tel" id="phone" name="phone">
                 </div>
-
+                <br>
                 <!--Address-->
                 <div>
                     <label for="address">Address <span class="text-danger">*</span> </label>
                     <br>
                     <input  type="text" id="address" name="address">
                 </div>
-                <!--find-->
-                <div>
-                    <label for="find"> Where did you find this Animal <span class="text-danger">*</span> </label>
+                <br>
+                <!--type of animal-->
+                <div class="dropdown">
+                    Choose Species:
                     <br>
-                    <input type="text" id="find" name="find">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pet Type
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Dog</a>
+                        <a class="dropdown-item" href="#">Cat</a>
+                        <a class="dropdown-item" href="#">Rabbit</a>
+                    </div>
                 </div>
+                <br>
                 <!--Date-->
                 <div>
                     <label for="start">Date: <span class="text-danger">*</span> </label>
@@ -60,6 +69,7 @@ to see more info about the dog
                     <input type="date" id="start" name="trip-start"
                            min="2022-10-06" max="2023-10-06">
                 </div>
+                <br>
                 <!--leave a message-->
                 <div>
                     <label for="message"><strong>Leave a Message</strong></label>

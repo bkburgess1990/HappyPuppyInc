@@ -13,7 +13,7 @@ to see more info about the dog
     <div class="row">
         <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 order-2" id="form">
             <form>
-                <h1>Please Fill This Form To Adopt an Animal</h1>
+                <h2>Please Fill This Form To Adopt an Animal</h2>
                 <!-- First name-->
                 <div>
                     <label for="fname">First name: <span class="text-danger">*</span></label>
@@ -49,17 +49,15 @@ to see more info about the dog
                 </div>
                 <br>
                 <!--type of animal-->
-                <div class="dropdown">
-                    Choose Species:
-                    <br>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pet Type
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Dog</a>
-                        <a class="dropdown-item" href="#">Cat</a>
-                        <a class="dropdown-item" href="#">Rabbit</a>
-                    </div>
+                <div id="animalCheckboxes">
+<!--                    <h5>Select which pets you would like to see (At least 1 required):</h5><span class="text-danger">*</span>-->
+                    <label><h5>Select which pets you would like to see:<span class="text-danger">*</span></h5> </label><br>
+                    <input type="checkbox" id="dogs" name="dogs" value="Dogs">
+                    <label for="dogs">Dogs</label><br>
+                    <input type="checkbox" id="cats" name="cats" value="Cats">
+                    <label for="cats">Cats</label><br>
+                    <input type="checkbox" id="rabbits" name="rabbits" value="Rabbits">
+                    <label for="rabbits">Rabbits</label><br>
                 </div>
                 <br>
                 <!--Date-->
@@ -94,10 +92,10 @@ to see more info about the dog
             <p><strong>2. Browse and Select</strong></p>
             <p>Once you've given us your info, you'll be able to view our animals.</p>
             <p>You will only be shown the species of pet that you selected.</p>
-            <p>You can click on each of the animal's pictures and it will take you to a page will further information
+            <p>You can click on each of the animal's pictures, and it will take you to a page will further information
                 on your future pet!</p>
             <h4>Our Animals</h4>
-            <p>We currently offer dogs, cats and rabbits</p>
+            <p>We currently offer dogs, cats and rabbits.</p>
             <hr>
             <!--Table -->
             <div>
@@ -133,7 +131,7 @@ to see more info about the dog
             <!--message-->
             <hr>
             <div>
-                <p><strong>To make a drop-off appointment, please call xxx-xxx-xxxx</strong></p>
+                <p><strong>To make a adoption interview appointment, please call xxx-xxx-xxxx</strong></p>
             </div>
         </div>
     </div>

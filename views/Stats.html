@@ -1,13 +1,46 @@
-<!--
-Names: Brandon Burgess
-File Name: Stats.html
-Date: 2/11/2023
-Description: Statistics page that will have infographics regarding various adoption demographics
--->
-
 <include href="views/header.html"></include>
 
 <h1>Adoption Statistics</h1>
+<h1>50,000</h1>
+<h3>ANIMALS ADOPTED SINCE 1983</h3>
+<div class = "paragraph">
+    <p>For us, progress means continuing to improve the lives of cats and dogs by </p>
+    <p>developing, implementing, and offering quality programs and services that</p>
+    <p>meet the most pressing needs and save the most lives in a loving,</p>
+    <p>respectful, and responsible way. Our staff and board work together to</p>
+    <p>develop and implement three-year strategic plans that align with our</p>
+    <p>mission. The strategic plan then guides our annual goals and objectives.</p>
+    <br>
+    <p>Each adoption, donation, and other interaction with you and fellow cat</p>
+    <p>lovers brings us closer to fulfilling our mission to save the lives of homeless,</p>
+    <p>unwanted, sick, and injured cats and to work with our community to</p>
+    <p>provide animal expertise and quality programs and services for people</p>
+    <p>and animals.</p>
+</div>
 
+<canvas id="myChart" style="width:100%;max-width:700px;margin-left:400px;"></canvas>
 
+<script>
+    var xValues = ["Birds", "Lizards", "Hamsters", "Cats", "Dogs"];
+    var yValues = [20, 35, 15, 60, 120];
+    var barColors = ["red", "green", "blue", "orange", "brown"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Gross intakes 2022"
+            }
+        }
+    });
+</script>
 <include href="views/footer.html"></include>

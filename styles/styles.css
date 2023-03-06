@@ -49,8 +49,6 @@ img {
 #footerStyles body {
     background-color: blue;
 }
-
-#adoptInfo {
-    background-color: gray;
-    padding-left: 5px;
+.paragraph{
+    text-align: center;
 }

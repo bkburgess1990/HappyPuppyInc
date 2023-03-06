@@ -1,3 +1,10 @@
+<!--
+Names: Brandon Burgess
+File Name: Adopt.html
+Date: 2/11/2023
+Description: adoption page where users will be able to look through animals to adopt and click on them
+to see more info about the pet
+-->
 <?php
 //controller
 
@@ -24,6 +31,13 @@ $f3->route('GET /admin1', function () {
     //instantiate a view
     $view = new Template();
     echo $view->render("views/admin1.html");
+});
+
+//define reservationData route
+$f3->route('GET|POST /resData', function () {
+    //instantiate a view
+    $view = new Template();
+    echo $view->render("views/reservationData.html");
 });
 
 //define Home route

@@ -20,7 +20,7 @@ $f3->route('GET|POST /', function () {
 });
 
 //define admin1 route
-$f3->route('GET|POST /admin1', function () {
+$f3->route('GET /admin1', function () {
     //instantiate a view
     $view = new Template();
     echo $view->render("views/admin1.html");

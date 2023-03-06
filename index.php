@@ -34,10 +34,10 @@ $f3->route('GET /admin1', function () {
 });
 
 //define reservationData route
-$f3->route('GET|POST /resData', function () {
+$f3->route('GET|POST /reservationData', function () {
     //instantiate a view
     $view = new Template();
-    echo $view->render("views/reservationData.html");
+    echo $view->render("views/reservationData.php");
 });
 
 //define Home route

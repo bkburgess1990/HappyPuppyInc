@@ -46,9 +46,11 @@ img {
     text-align: center;
 }
 
-#footerStyles body {
+#footerStyles {
     background-color: blue;
 }
-#paragraph{
-    text-align: center;
+
+#adoptInfo {
+    background-color: gray;
+    padding-left: 5px;
 }

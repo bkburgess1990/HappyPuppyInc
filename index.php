@@ -19,9 +19,15 @@ $f3->route('GET|POST /', function () {
     echo $view->render("views/home.html");
 });
 
-//define  Home route
-$f3->route('GET|POST /home', function () {
+//define admin1 route
+$f3->route('GET|POST /admin1', function () {
+    //instantiate a view
+    $view = new Template();
+    echo $view->render("views/admin1.html");
+});
 
+//define Home route
+$f3->route('GET|POST /home', function () {
     //instantiate a view
     $view = new Template();
     echo $view->render("views/home.html");
@@ -29,7 +35,6 @@ $f3->route('GET|POST /home', function () {
 
 //define Application route
 $f3->route('GET|POST /apply', function () {
-
     //instantiate a view
     $view = new Template();
     echo $view->render("views/apply.html");
@@ -37,7 +42,6 @@ $f3->route('GET|POST /apply', function () {
 
 //define Application route
 $f3->route('GET|POST /form', function () {
-
     //instantiate a view
     $view = new Template();
     echo $view->render("views/form.html");
@@ -45,7 +49,6 @@ $f3->route('GET|POST /form', function () {
 
 //define About Us route
 $f3->route('GET|POST /AboutUs', function () {
-
     //instantiate a view
     $view = new Template();
     echo $view->render("views/aboutUs.html");
@@ -53,7 +56,6 @@ $f3->route('GET|POST /AboutUs', function () {
 
 //define Adopt route
 $f3->route('GET|POST /Adopt', function () {
-
     //instantiate a view
     $view = new Template();
     echo $view->render("views/Adopt.html");
@@ -61,7 +63,6 @@ $f3->route('GET|POST /Adopt', function () {
 
 //define Adopt route
 $f3->route('GET|POST /donate', function () {
-
     //instantiate a view
     $view = new Template();
     echo $view->render("views/Donate.html");
@@ -69,7 +70,6 @@ $f3->route('GET|POST /donate', function () {
 
 //define Statistics route
 $f3->route('GET|POST /Stats', function () {
-
     //instantiate a view
     $view = new Template();
     echo $view->render("views/Stats.html");
@@ -77,7 +77,6 @@ $f3->route('GET|POST /Stats', function () {
 
 //define Statistics route
 $f3->route('GET|POST /contact', function () {
-
     //instantiate a view
     $view = new Template();
     echo $view->render("views/contact.html");

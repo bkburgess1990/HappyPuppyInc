@@ -8,7 +8,7 @@ class Cat extends pet
     //constructor
     function __construct($_price)
     {
-        parent::__construct($_petType, )
+//        parent::__construct()
         $this->_price = $_price;
     }
 

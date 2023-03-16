@@ -6,9 +6,9 @@ class Dog extends pet
     //fields
     private $_price;
     //constructor
-    function __construct($price)
+    function __construct($_price)
     {
-        $this->_price = $price;
+        $this->_price = $_price;
     }
 
     /**

@@ -11,14 +11,14 @@ class Pet
     private $_adoptable;
 
     //constructor
-    function __construct($petType, $name, $age, $breed, $neutered, $adoptable)
+    function __construct($_petType, $_name, $_age, $_breed, $_neutered, $_adoptable)
     {
-        $this->_petType = $petType;
-        $this->_name = $name;
-        $this->_age = $age;
-        $this->_breed = $breed;
-        $this->_neutered = $neutered;
-        $this->_adoptable = $adoptable;
+        $this->_petType = $_petType;
+        $this->_name = $_name;
+        $this->_age = $_age;
+        $this->_breed = $_breed;
+        $this->_neutered = $_neutered;
+        $this->_adoptable = $_adoptable;
     }
 
     /**

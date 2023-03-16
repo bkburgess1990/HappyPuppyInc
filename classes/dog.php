@@ -10,5 +10,20 @@ class Dog extends pet
     {
         $this->_price = $price;
     }
-    //methods
+
+    /**
+     * @return
+     */
+    public function getPrice()
+    {
+        return $this->_price;
+    }
+
+    /**
+     * @param $price
+     */
+    public function setPrice($price)
+    {
+        $this->_price = $price;
+    }
 }

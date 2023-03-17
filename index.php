@@ -15,12 +15,14 @@ error_reporting(E_ALL);
 //require autoload file
 require_once('vendor/autoload.php');
 
-
-//define a controller
-$controller = new Controller();
-
 //Instantiate F3 base class
 $f3 = Base::instance();
+
+
+//define a controller
+$controller = new Controller($f3);
+
+
 
 //define initial route
 $f3->route('GET|POST /', function () {
@@ -36,7 +38,7 @@ $f3->route('GET /admin1', function () {
 });
 
 //define reservationData route
-$f3->route('GET|POST /reservationData', function () {
+$f3->route('GET|POST /adminPage', function () {
     //instantiate a view
     $GLOBALS['controller']-> adminPage();
 });

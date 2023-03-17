@@ -15,6 +15,10 @@ error_reporting(E_ALL);
 //require autoload file
 require_once('vendor/autoload.php');
 
+
+//define a controller
+$controller = new Controller();
+
 //Instantiate F3 base class
 $f3 = Base::instance();
 
@@ -22,78 +26,68 @@ $f3 = Base::instance();
 $f3->route('GET|POST /', function () {
 
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/home.html");
+    $GLOBALS['controller']-> home();
 });
 
 //define admin1 route
 $f3->route('GET /admin1', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/admin1.html");
+    $GLOBALS['controller']-> admin();
 });
 
 //define reservationData route
 $f3->route('GET|POST /reservationData', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/reservationData.php");
+    $GLOBALS['controller']-> adminPage();
 });
 
 //define Home route
 $f3->route('GET|POST /home', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/home.html");
+    $GLOBALS['controller']-> home();
 });
 
-//define Application route
+//define apply route
 $f3->route('GET|POST /apply', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/apply.html");
+    $GLOBALS['controller']-> apply();
 });
 
-//define Application route
+//define form route
 $f3->route('GET|POST /form', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/form.html");
+    $GLOBALS['controller']-> form();
+
 });
 
 //define About Us route
 $f3->route('GET|POST /AboutUs', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/aboutUs.html");
+    $GLOBALS['controller']-> aboutUs();
 });
 
 //define Adopt route
 $f3->route('GET|POST /Adopt', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/Adopt.html");
+    $GLOBALS['controller']-> adopt();
 });
 
 //define Adopt route
 $f3->route('GET|POST /donate', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/Donate.html");
+    $GLOBALS['controller']-> donation();
 });
 
 //define Statistics route
 $f3->route('GET|POST /Stats', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/Stats.html");
+    $GLOBALS['controller']-> statistc();
 });
 
 //define Statistics route
 $f3->route('GET|POST /contact', function () {
     //instantiate a view
-    $view = new Template();
-    echo $view->render("views/contact.html");
+    $GLOBALS['controller']-> contact();
 });
 
 

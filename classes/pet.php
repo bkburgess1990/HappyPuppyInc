@@ -100,4 +100,20 @@ class Pet
     {
         $this->_neutered = $neutered;
     }
+
+    /**
+     * @return
+     */
+    public function getAdoptable()
+    {
+        return $this->_adoptable;
+    }
+
+    /**
+     * @param $adoptable
+     */
+    public function setAdoptable($adoptable)
+    {
+        $this->_adoptable = $adoptable;
+    }
 }

@@ -11,18 +11,15 @@ class Customer
     private $_pet;
 
     //constructor
-<<<<<<< HEAD
+
     function __construct($firstName = "", $lastName = "", $birthday = "", $phone = "", $email = "", $pet = "")
-=======
-    function __construct($_firstName, $_lastName, $_birthday, $_phone, $_email, $_pet)
->>>>>>> 4d1751dad26e90797aaa05fbec7589f10981efd5
     {
-        $this->_firstName = $_firstName;
-        $this->_lastName = $_lastName;
-        $this->_birthday = $_birthday;
-        $this->_phone = $_phone;
-        $this->_email = $_email;
-        $this->_pet = $_pet;
+        $this->_firstName = $firstName;
+        $this->_lastName = $lastName;
+        $this->_birthday = $birthday;
+        $this->_phone = $phone;
+        $this->_email = $email;
+        $this->_pet = $pet;
     }
 
     /**

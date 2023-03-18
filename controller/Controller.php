@@ -82,7 +82,7 @@ class Controller
             if (Validation::validWhere($_POST['find'])) {
                 $myPet->setPhone($_POST['find']);
             } else {
-                $this->_f3->set('errors["find"]', 'you must enter where did you find this animal');
+                $this->_f3->set('errors["find"]', 'you must enter a breed');
             }
         }
         if (empty($this->_f3->get('errors'))) {

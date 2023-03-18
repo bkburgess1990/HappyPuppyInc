@@ -3,9 +3,9 @@
 class Pet
 {
     //fields
-    private $_petType;
+    protected $_petType;
     private $_name;
-    private $_age;
+    protected $_age;
     private $_breed;
     private $_neutered;
     private $_adoptable;
@@ -99,5 +99,21 @@ class Pet
     public function setNeutered($neutered)
     {
         $this->_neutered = $neutered;
+    }
+
+    /**
+     * @return
+     */
+    public function getAdoptable()
+    {
+        return $this->_adoptable;
+    }
+
+    /**
+     * @param $adoptable
+     */
+    public function setAdoptable($adoptable)
+    {
+        $this->_adoptable = $adoptable;
     }
 }

@@ -3,9 +3,9 @@
 class Pet
 {
     //fields
-    private $_petType;
+    protected $_petType;
     private $_name;
-    private $_age;
+    protected $_age;
     private $_breed;
     private $_neutered;
     private $_adoptable;

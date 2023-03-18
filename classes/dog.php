@@ -25,10 +25,15 @@ class Dog extends Pet
      */
     public function setPrice($price)
     {
-        //if pettype is dog and age <1 yr
-
-        // if age is > 1 year
-
-        $this->_price = $price;
+        //if pettype is dog and age <2 yr
+        if($this->_petType == "Dog") {
+            if($this->_age < 2) {
+                $price = 200;
+            }
+            else {
+                $price = 100;
+            }
+        }
+        return $price;
     }
 }

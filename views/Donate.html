@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-2"></div>
-        <div class="col-4">
+        <div class="col-4" style = "text-align: center">
             <h3>HappyPuppyInc </h3>
             <h2><strong>Help pets in our</strong></h2>
             <h2><strong>community </strong></h2>
@@ -15,6 +15,7 @@
             <p>shelter</p>
         </div>
         <div class="col-2">
+        <form action = "#" method = "post">
             <h2 style="text-align: center">Choose an amount to give</h2>
             <hr>
             <div class = "col-11">
@@ -51,12 +52,25 @@
                     </label>
                 </div>
             </div>
+            <div>
+                <check if="{{isset(@errors['amount'])}}">
+                                <span class="err">
+                                    {{ @errors['amount']}}
+                                </span>
+                </check>
+            </div>
             <!-- First name-->
             <div>
                 <label for="fname">First name: <span class="text-danger">*</span></label>
                 <br>
-                <input type="text" id="fname" name="fname"
-                       required="required">
+                <input type="text" id="fname" name="fname">
+            </div>
+            <div>
+                <check if="{{isset(@errors['fname'])}}">
+                                <span class="err">
+                                    {{ @errors['fname']}}
+                                </span>
+                </check>
             </div>
 
             <!--Last name-->
@@ -66,11 +80,25 @@
                 <br>
                 <input type="text" id="lname" name="lname">
             </div>
+            <div>
+                <check if="{{isset(@errors['Lname'])}}">
+                                <span class="err">
+                                    {{ @errors['Lname']}}
+                                </span>
+                </check>
+            </div>
             <div> <!-- Email Input + Drop Box for @-->
                 <br> <!-- Line break-->
                 <label for="email">Email <span class="text-danger">*</span> </label>
                 <br>
                 <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <check if="{{isset(@errors['email'])}}">
+                                <span class="err">
+                                    {{ @errors['email']}}
+                                </span>
+                </check>
             </div>
             <br> <!-- Line break-->
             <div>
@@ -78,32 +106,58 @@
                 <br>
                 <input  type="tel" id="phone" name="phone">
             </div>
-
+            <div>
+                <check if="{{isset(@errors['phone'])}}">
+                                <span class="err">
+                                    {{ @errors['phone']}}
+                                </span>
+                </check>
+            </div>
             <!--Address-->
             <div>
                 <label for="address">Address <span class="text-danger">*</span> </label>
                 <br>
                 <input  type="text" id="address" name="address">
             </div>
+            <div>
+                <check if="{{isset(@errors['address'])}}">
+                                <span class="err">
+                                    {{ @errors['address']}}
+                                </span>
+                </check>
+            </div>
             <!--credit card-->
             <div>
                 <label for="card"> Credit card Number <span class="text-danger">*</span> </label>
                 <br>
-                <input type="text" id="card" name="find">
+                <input type="text" id="card" name="credit">
+            </div>
+            <div>
+                <check if="{{isset(@errors['credit'])}}">
+                                <span class="err">
+                                    {{ @errors['credit']}}
+                                </span>
+                </check>
             </div>
             <!--credit card info-->
             <div>
                 <label for="find" > Zip Code <span class="text-danger">*</span> </label>
                 <br>
-                <input type="text" id="find" name="find" maxlength="20">
+                <input type="text" id="find" name="zip" maxlength="20">
+            </div>
+            <div>
+                <check if="{{isset(@errors['zip'])}}">
+                                <span class="err">
+                                    {{ @errors['zip']}}
+                                </span>
+                </check>
             </div>
             <br>
             <div id = "buttonBottom">
                 <button type="submit" class="btn btn-secondary btn-block" id = "buttonEx"> Submit </button>
             </div>
+        </form>
         </div>
-
-
     </div>
 </div>
 

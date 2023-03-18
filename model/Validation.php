@@ -47,4 +47,61 @@ class Validation
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
+    /**
+     * ValidAddress() checks to see that an address is valid.
+     * @return boolean
+     */
+    static function validAddress($address)
+    {
+        if($address = "")
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    /**
+     * ValidCredit card checks to see that an creditcard is valid.
+     * @return boolean
+     */
+    static function validCreditCard($creditcard)
+    {
+        return preg_match("/\d/", $creditcard);
+    }
+    /**
+     * ValidZipCode() checks to see that an zipcode is valid.
+     * @return boolean
+     */
+    static function validZipCode($zip)
+    {
+        return preg_match("/\d/", $zip);
+    }
+    /**
+     * ValidWhere() checks to see a message is valid.
+     * @return boolean
+     */
+    static function validWhere($where)
+    {
+        if($where != "")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * validdonation() checks to see that a string is a valid “value” property.
+     * @return boolean
+     */
+    static function validDonation($experience)
+    {
+
+        return in_array($experience, DataLayer::getDonation());
+    }
+
 }

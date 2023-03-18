@@ -11,7 +11,7 @@ class Customer
     private $_pet;
 
     //constructor
-    function __construct($firstName, $lastName, $birthday, $phone, $email, $pet)
+    function __construct($firstName = "", $lastName = "", $birthday = "", $phone = "", $email = "", $pet = "")
     {
         $this->_firstName = $firstName;
         $this->_lastName = $lastName;

@@ -90,6 +90,9 @@ class Controller
         //instantiate a view
         $view = new Template();
         echo $view->render("views/form.html");
+        if (empty($this->_f3->get('errors'))) {
+            $this->_f3->reroute('surrenderForm');
+        }
     }
 
     function aboutUs()

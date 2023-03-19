@@ -186,7 +186,7 @@ class Controller
         echo $view->render("views/Donate.html");
     }
 
-    function statistc()
+    function statistic()
     {
         //instantiate a view
         $view = new Template();
@@ -198,5 +198,12 @@ class Controller
         //instantiate a view
         $view = new Template();
         echo $view->render("views/contact.html");
+    }
+
+    function surrenderForm()
+    {
+        //instantiate a view
+        $view = new Template();
+        echo $view->render("views/surrenderForm.php");
     }
 }

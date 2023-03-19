@@ -23,7 +23,6 @@ $controller = new Controller($f3);
 
 //define initial route
 $f3->route('GET|POST /', function () {
-
     //instantiate a view
     $GLOBALS['controller']-> home();
 });
@@ -56,7 +55,6 @@ $f3->route('GET|POST /apply', function () {
 $f3->route('GET|POST /form', function () {
     //instantiate a view
     $GLOBALS['controller']-> form();
-
 });
 
 //define About Us route
@@ -80,13 +78,19 @@ $f3->route('GET|POST /donate', function () {
 //define Statistics route
 $f3->route('GET|POST /Stats', function () {
     //instantiate a view
-    $GLOBALS['controller']-> statistc();
+    $GLOBALS['controller']-> statistic();
 });
 
-//define Statistics route
+//define contact route
 $f3->route('GET|POST /contact', function () {
     //instantiate a view
     $GLOBALS['controller']-> contact();
+});
+
+//define surrenderForm route
+$f3->route('GET|POST /surrenderForm', function () {
+    //instantiate a view
+    $GLOBALS['controller']-> surrenderForm();
 });
 
 //run fat free

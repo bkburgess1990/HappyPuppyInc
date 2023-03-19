@@ -46,8 +46,8 @@ img {
     text-align: center;
 }
 
-#footerStyles {
-    background-color: blue;
+#footerStyle {
+    padding-right: 10px;
 }
 
 #adoptInfo {

@@ -10,14 +10,17 @@ Description: This page is a surrender form, where users will fill out informatio
 <div class="container-fluid">
   <div class="row">
     <h1>Please Give Us the Info for the Animal you Want to Surrender</h1>
-    <div class = "col-2"></div>
-    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-2" id="form">
+    <div class ="col-2"></div>
+    <div class="col-4" id="form">
       <form action = "#" method = "post">
         <!-- Pet Type-->
         <div>
-          <label for="ptype">First name: <span class="text-danger">*</span></label>
+          <label for="ptype">Pet Type: <span class="text-danger">*</span></label>
           <br>
-          <input type="text" id="ptype" name="ptype">
+          <select name="ptype" id="ptype">
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+          </select>
           <div>
             <check if="{{isset(@errors['ptype'])}}">
               <span class="err">
@@ -28,7 +31,7 @@ Description: This page is a surrender form, where users will fill out informatio
         </div>
         <!-- Pet Name-->
         <div>
-          <label for="pname">First name: <span class="text-danger">*</span></label>
+          <label for="pname">Pet's Name<span class="text-danger">*</span></label>
           <br>
           <input type="text" id="pname" name="pname">
           <div>
@@ -39,9 +42,9 @@ Description: This page is a surrender form, where users will fill out informatio
             </check>
           </div>
         </div>
-
+        <!-- Pet Age-->
         <div>
-          <label for="age">First name: <span class="text-danger">*</span></label>
+          <label for="age">Pet's Age: <span class="text-danger">*</span></label>
           <br>
           <select name="age" id="age">
             <option value="0">0</option>
@@ -65,12 +68,52 @@ Description: This page is a surrender form, where users will fill out informatio
             </check>
           </div>
         </div>
-        <!--leave a message-->
+        <!-- Pet Breed-->
+        <div>
+          <label for="breed">Pet's Breed: <span class="text-danger">*</span></label>
+          <br>
+          <input type="text" id="breed" name="breed">
+          <div>
+            <check if="{{isset(@errors['pname'])}}">
+              <span class="err">
+                {{ @errors['breed']}}
+              </span>
+            </check>
+          </div>
+        </div>
+        <!-- Pet Type-->
+        <div>
+          <label for="neutered">Is this pet spayed/neutered?: <span class="text-danger">*</span></label>
+          <br>
+          <select name="neutered" id="neutered">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <div>
+            <check if="{{isset(@errors['neutered'])}}">
+              <span class="err">
+                {{ @errors['neutered']}}
+              </span>
+            </check>
+          </div>
+        </div>
+        <!--Additional Info-->
+        <div>
+          <label for="message"><strong>Is there any Additional Info you'd like to give?</strong></label>
+          <br>
+          <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        </div>
+        <!--Submit-->
         <div id = "buttonBottom">
+          <br>
           <button type="submit" class="btn btn-secondary btn-block" id = "buttonEx"> Submit </button>
         </div>
       </form>
     </div>
+    <div class="col-4">
+      <img src="images/sadPuppy.jpg" height="100%" width="100%">
+    </div>
+    <div class="col-2"></div>
   </div>
 </div>
 

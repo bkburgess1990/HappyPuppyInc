@@ -27,6 +27,9 @@ class Controller
     function adminPage()
     {
 
+        //Get the data from the model
+        $applicants = $GLOBALS['dataLayer']->getApplicants();
+        $this->_f3->set('applicants', $applicants);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/adminPage.php");
@@ -34,6 +37,10 @@ class Controller
 
     function thanks()
     {
+        $layer = new DataLayer();
+        //Write to Database
+        $id = $layer->insertApplicant($_SESSION['customer']);
+        echo "Order ID: $id";
         //instantiate a view
         $view = new Template();
         echo $view->render("views/thanks.html");
@@ -136,13 +143,12 @@ class Controller
             }
             if (Validation::validAddress($_POST['address'])) {
                 $myPet->setaddress($_POST['address']);
-                $myPet->setPhone($_POST['address']);
             } else {
                 $this->_f3->set('errors["address"]', 'You address can not be empty');
             }
             if (empty($this->_f3->get('errors'))) {
-                $this->_f3->reroute('thanks');
                 $_SESSION['customer'] = $myPet;
+                $this->_f3->reroute('thanks');
             }
         }
         //instantiate a view

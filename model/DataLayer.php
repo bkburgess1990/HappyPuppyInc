@@ -1,7 +1,7 @@
 <?php
 
 //needs a PDO_Config.php in cPanel file manager
-require_once ($_SERVER['DOCUMENT_ROOT'].'/../pdo_config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/../pdo-config.php');
 
 class DataLayer
 {
@@ -24,7 +24,7 @@ class DataLayer
     {
         // 1. Define a query
         $sql = "INSERT INTO customers (firstName,lastName,address,phone,email,pet,message,price) VALUES 
-        (:fname,:lname,:email,:state,:phone,:pet,:message,:price)";
+        (:fname,:lname,:address,:phone,:email,:pet,:message,:price)";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -36,8 +36,8 @@ class DataLayer
         $phone = $_SESSION['customer']->getPhone();
         $email = $_SESSION['customer']->getEmail();
         $pet = $_SESSION['customer']->getPet();
-        $message = $_SESSION['newApplicant']->getMessage();
-        $price = $_SESSION['newApplicant']->getPrice();
+        $message = $_SESSION['customer']->getMessage();
+        $price = $_SESSION['customer']->getPrice();
 
         $statement->bindParam(':fname', $fname);
         $statement->bindParam(':lname', $lname);
@@ -64,7 +64,7 @@ class DataLayer
     function getApplicants()
     {
         //1. Define the query
-        $sql = "SELECT * FROM customers ORDER BY lname";
+        $sql = "SELECT * FROM customers";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);

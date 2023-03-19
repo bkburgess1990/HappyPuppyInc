@@ -49,22 +49,22 @@ $hash = password_hash($password,PASSWORD_DEFAULT);
                     <span>leave us a message</span>
                 </div>
                 <div class = "col-1">
-                    <span>adopt status</span>
+                    <span>donate price</span>
                 </div>
                 <div class = "col-1">
-                    <span>donate price</span>
+                    <span>adopt status</span>
                 </div>
                 <hr>
                 <repeat group="{{ @applicants }}" value="{{ @applicant }}">
                     <div class = "col-1 ">
-                        <span>{{ @applicant['applicant_id'] }}</span>
+                        <span>{{ @applicant['id'] }}</span>
                     </div>
-                    <div class = "col-1">
-                        <span>{{ @applicant['fname'] }}</span>
-                        <span>{{ @applicant['lname'] }}</span>
+                    <div class = "col-2">
+                        <span>{{ @applicant['firstName'] }}</span>
+                        <span>{{ @applicant['lastName'] }}</span>
                     </div>
                     <div class = "col-2 ">
-                        <span>{{ @applicant['github'] }}</span>
+                        <span>{{ @applicant['address'] }}</span>
                     </div>
                     <div class = "col-1">
                         <span>{{ @applicant['phone'] }}</span>
@@ -73,25 +73,22 @@ $hash = password_hash($password,PASSWORD_DEFAULT);
                         <span>{{ @applicant['email'] }}</span>
                     </div>
                     <div class = "col-1">
-                        <span>{{ @applicant['state'] }}</span>
+                        <span>{{ @applicant['pet'] }}</span>
                     </div>
                     <div class = "col-1 ">
-                        <span>{{ @applicant['experience'] }} years</span>
+                        <span>{{ @applicant['message'] }} years</span>
                     </div>
                     <div class = "col-1">
-                        <span>{{ @applicant['relocate'] }}</span>
+                        <span>{{ @applicant['price'] }}</span>
                     </div>
                     <div class = "col-1 ">
-                        <check if = " {{ @applicant['mailing_lists_signup'] == 1 }}">
-                            <true><input type="checkbox" name="Lists" value="list" checked disabled></true>
-                            <false><input type="checkbox" name="List" value="lists" disabled></false>
-                        </check>
+                            <input type="checkbox" name="Lists" value="list" checked >
                         <span></span>
                     </div>
-                    <div class = "col-1">
+<!--                    <div class = "col-1">
                         <span>{{ @applicant['mailing_lists_subscriptions'] }}</span>
                         <span>{{ @applicant['mailing_lists_subscription'] }}</span>
-                    </div>
+                    </div>-->
                     <hr>
                 </repeat>
             </div>

@@ -1,0 +1,113 @@
+<include href="views/header.html"></include>
+
+<div class="container-fluid">
+  <div class="row">
+    <h1>Please Fill This Form To Surrender An Animal</h1>
+    <div class = "col-2"></div>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 order-2" id="form">
+      <form action = "#" method = "post">
+        <!-- First name-->
+        <div>
+          <label for="fname">First name: <span class="text-danger">*</span></label>
+          <br>
+          <input type="text" id="fname" name="fname">
+          <div>
+            <check if="{{isset(@errors['fname'])}}">
+                                <span class="err">
+                                    {{ @errors['fname']}}
+                                </span>
+            </check>
+          </div>
+        </div>
+
+        <!--Last name-->
+        <br> <!-- Line break-->
+        <div>
+          <label for="lname"> Last Name: <span class="text-danger">*</span></label>
+          <br>
+          <input type="text" id="lname" name="lname">
+        </div>
+        <div>
+          <check if="{{isset(@errors['Lname'])}}">
+                                <span class="err">
+                                    {{ @errors['Lname']}}
+                                </span>
+          </check>
+        </div>
+        <div> <!-- Email Input + Drop Box for @-->
+          <br> <!-- Line break-->
+          <label for="email">Email <span class="text-danger">*</span> </label>
+          <br>
+          <input type="email" id="email" name="email">
+        </div>
+        <div>
+          <check if="{{isset(@errors['email'])}}">
+                                <span class="err">
+                                    {{ @errors['email']}}
+                                </span>
+          </check>
+        </div>
+        <br> <!-- Line break-->
+        <div>
+          <label for="phone">Phone <span class="text-danger">*</span> </label>
+          <br>
+          <input  type="tel" id="phone" name="phone">
+        </div>
+        <div>
+          <check if="{{isset(@errors['phone'])}}">
+                                <span class="err">
+                                    {{ @errors['phone']}}
+                                </span>
+          </check>
+        </div>
+
+        <!--Address-->
+        <div>
+          <label for="address">Address <span class="text-danger">*</span> </label>
+          <br>
+          <input  type="text" id="address" name="address">
+        </div>
+        <div>
+          <check if="{{isset(@errors['address'])}}">
+                                <span class="err">
+                                    {{ @errors['address']}}
+                                </span>
+          </check>
+        </div>
+        <!--find-->
+        <div>
+          <label for="find"> What breed is it? <span class="text-danger">*</span> </label>
+          <br>
+          <input type="text" id="find" name="find">
+        </div>
+        <div>
+          <check if="{{isset(@errors['find'])}}">
+                                <span class="err">
+                                    {{ @errors['find']}}
+                                </span>
+          </check>
+        </div>
+        <!--Date-->
+        <div>
+          <label for="start">Date: <span class="text-danger">*</span> </label>
+          <br>
+          <input type="date" id="start" name="trip-start"
+                 min="2022-10-06" max="2023-10-06">
+        </div>
+        <!--leave a message-->
+        <div>
+          <label for="message"><strong>Leave a Message</strong></label>
+          <br>
+          <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        </div>
+        <div id = "buttonBottom">
+          <button type="submit" class="btn btn-secondary btn-block" id = "buttonEx"> Submit </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<include href="views/footer.html"></include>

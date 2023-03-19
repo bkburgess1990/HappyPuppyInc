@@ -18,11 +18,8 @@ require_once('vendor/autoload.php');
 //Instantiate F3 base class
 $f3 = Base::instance();
 
-
 //define a controller
 $controller = new Controller($f3);
-
-
 
 //define initial route
 $f3->route('GET|POST /', function () {
@@ -91,7 +88,6 @@ $f3->route('GET|POST /contact', function () {
     //instantiate a view
     $GLOBALS['controller']-> contact();
 });
-
 
 //run fat free
 $f3->run();

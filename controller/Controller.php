@@ -207,6 +207,6 @@ class Controller
     {
         //instantiate a view
         $view = new Template();
-        echo $view->render("views/surrenderForm.php");
+        echo $view->render("views/surrenderForm.html");
     }
 }

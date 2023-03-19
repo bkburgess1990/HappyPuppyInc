@@ -28,10 +28,10 @@ $hash = password_hash($password,PASSWORD_DEFAULT);
         <div class = "container-fluid">
             <div class = "row">
                 <div class = "col-1 ">
-                    <span>firstName</span>
+                    <span>ID</span>
                 </div>
-                <div class = "col-1">
-                    <span>lastName</span>
+                <div class = "col-2">
+                    <span>Name</span>
                 </div>
                 <div class = "col-2 ">
                     <span>email</span>
@@ -46,13 +46,10 @@ $hash = password_hash($password,PASSWORD_DEFAULT);
                     <span>Address</span>
                 </div>
                 <div class = "col-1 ">
-                    <span>leave us a message/span>
+                    <span>leave us a message</span>
                 </div>
                 <div class = "col-1">
                     <span>adopt status</span>
-                </div>
-                <div class = "col-1 ">
-                    <span>surrendered animal</span>
                 </div>
                 <div class = "col-1">
                     <span>donate price</span>

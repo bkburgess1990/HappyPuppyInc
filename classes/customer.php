@@ -9,10 +9,11 @@ class Customer
     private $_phone;
     private $_email;
     private $_pet;
-
+    private $_message;
+    private $_price;
     //constructor
 
-    function __construct($firstName = "", $lastName = "", $address = "", $phone = "", $email = "", $pet = "")
+    function __construct($firstName = "", $lastName = "", $address = "", $phone = "", $email = "", $pet = "", $message = "", $price = " ")
     {
         $this->_firstName = $firstName;
         $this->_lastName = $lastName;
@@ -20,6 +21,8 @@ class Customer
         $this->_phone = $phone;
         $this->_email = $email;
         $this->_pet = $pet;
+        $this->_message = $message;
+        $this->_price = $price;
     }
 
     /**
@@ -116,5 +119,36 @@ class Customer
     public function setPet($pet)
     {
         $this->_pet = $pet;
+    }
+    /**
+     * @return
+     */
+    public function getMessage()
+    {
+        return $this->_message;
+    }
+
+    /**
+     * @param $message
+     */
+    public function setMessage($message)
+    {
+        $this->_pet = $message;
+    }
+
+    /**
+     * @return
+     */
+    public function getPrice()
+    {
+        return $this->_price;
+    }
+
+    /**
+     * @param $message
+     */
+    public function setPrice($price)
+    {
+        $this->_price = $price;
     }
 }

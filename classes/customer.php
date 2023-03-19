@@ -5,18 +5,18 @@ class Customer
     //fields
     private $_firstName;
     private $_lastName;
-    private $_birthday;
+    private $_address;
     private $_phone;
     private $_email;
     private $_pet;
 
     //constructor
 
-    function __construct($firstName = "", $lastName = "", $birthday = "", $phone = "", $email = "", $pet = "")
+    function __construct($firstName = "", $lastName = "", $address = "", $phone = "", $email = "", $pet = "")
     {
         $this->_firstName = $firstName;
         $this->_lastName = $lastName;
-        $this->_birthday = $birthday;
+        $this->_address = $address;
         $this->_phone = $phone;
         $this->_email = $email;
         $this->_pet = $pet;
@@ -57,15 +57,15 @@ class Customer
     /**
      * @return
      */
-    public function getBirthday()
+    public function getAddress()
     {
         return $this->_birthday;
     }
 
     /**
-     * @param $birthday
+     * @param $address
      */
-    public function setBirthday($birthday)
+    public function setAddress($birthday)
     {
         $this->_birthday = $birthday;
     }

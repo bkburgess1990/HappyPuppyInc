@@ -1,10 +1,3 @@
-<!--
-Names: Brandon Burgess
-File Name: Adopt.html
-Date: 2/11/2023
-Description: adoption page where users will be able to look through animals to adopt and click on them
-to see more info about the pet
--->
 <?php
 //controller
 
@@ -14,7 +7,7 @@ error_reporting(E_ALL);
 
 //require autoload file
 require_once('vendor/autoload.php');
-
+session_start();
 //Instantiate F3 base class
 $f3 = Base::instance();
 

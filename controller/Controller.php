@@ -26,6 +26,7 @@ class Controller
 
     function adminPage()
     {
+        var_dump($_SESSION['customer']);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/adminPage.php");
@@ -85,8 +86,6 @@ class Controller
                 $this->_f3->set('errors["find"]', 'you must enter a breed');
             }
         }
-        if (empty($this->_f3->get('errors'))) {
-        }
         //instantiate a view
         $view = new Template();
         echo $view->render("views/form.html");
@@ -126,10 +125,14 @@ class Controller
             } else {
                 $this->_f3->set('errors["phone"]', 'You must enter digits and xxx-xxx-xxxx');
             }
-            if (!Validation::validAddress($_POST['address'])) {
-                $myPet->setPhone($_POST['address']);
+            if (Validation::validAddress($_POST['address'])) {
+                $myPet->setaddress($_POST['address']);
             } else {
                 $this->_f3->set('errors["address"]', 'You address can not be empty');
+            }
+            if (empty($this->_f3->get('errors'))) {
+                $this->_f3->reroute('adminPage');
+                $_SESSION['customer'] = $myPet;
             }
         }
         //instantiate a view
@@ -168,7 +171,7 @@ class Controller
             } else {
                 $this->_f3->set('errors["phone"]', 'You must enter digits and xxx-xxx-xxxx');
             }
-            if (!Validation::validAddress($_POST['address'])) {
+            if (Validation::validAddress($_POST['address'])) {
                 $myPet->setPhone($_POST['address']);
             } else {
                 $this->_f3->set('errors["address"]', 'You address can not be empty');
@@ -182,6 +185,9 @@ class Controller
                 $myPet->setPhone($_POST['zip']);
             } else {
                 $this->_f3->set('errors["zip"]', 'You zip code can not be empty');
+            }
+            if (empty($this->_f3->get('errors'))) {
+                $this->_f3->reroute('adminPage');
             }
         }
         //instantiate a view

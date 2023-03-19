@@ -25,7 +25,80 @@ $hash = password_hash($password,PASSWORD_DEFAULT);
 
 
         <body>
-
+        <div class = "container-fluid">
+            <div class = "row">
+                <div class = "col-1 ">
+                    <span>firstName</span>
+                </div>
+                <div class = "col-1">
+                    <span>lastName</span>
+                </div>
+                <div class = "col-2 ">
+                    <span>email</span>
+                </div>
+                <div class = "col-1">
+                    <span>Phone</span>
+                </div>
+                <div class = "col-1 ">
+                    <span>Email</span>
+                </div>
+                <div class = "col-1">
+                    <span>Address</span>
+                </div>
+                <div class = "col-1 ">
+                    <span>leave us a message/span>
+                </div>
+                <div class = "col-1">
+                    <span>adopt status</span>
+                </div>
+                <div class = "col-1 ">
+                    <span>surrendered animal</span>
+                </div>
+                <div class = "col-1">
+                    <span>donate price</span>
+                </div>
+                <hr>
+                <repeat group="{{ @applicants }}" value="{{ @applicant }}">
+                    <div class = "col-1 ">
+                        <span>{{ @applicant['applicant_id'] }}</span>
+                    </div>
+                    <div class = "col-1">
+                        <span>{{ @applicant['fname'] }}</span>
+                        <span>{{ @applicant['lname'] }}</span>
+                    </div>
+                    <div class = "col-2 ">
+                        <span>{{ @applicant['github'] }}</span>
+                    </div>
+                    <div class = "col-1">
+                        <span>{{ @applicant['phone'] }}</span>
+                    </div>
+                    <div class = "col-1 ">
+                        <span>{{ @applicant['email'] }}</span>
+                    </div>
+                    <div class = "col-1">
+                        <span>{{ @applicant['state'] }}</span>
+                    </div>
+                    <div class = "col-1 ">
+                        <span>{{ @applicant['experience'] }} years</span>
+                    </div>
+                    <div class = "col-1">
+                        <span>{{ @applicant['relocate'] }}</span>
+                    </div>
+                    <div class = "col-1 ">
+                        <check if = " {{ @applicant['mailing_lists_signup'] == 1 }}">
+                            <true><input type="checkbox" name="Lists" value="list" checked disabled></true>
+                            <false><input type="checkbox" name="List" value="lists" disabled></false>
+                        </check>
+                        <span></span>
+                    </div>
+                    <div class = "col-1">
+                        <span>{{ @applicant['mailing_lists_subscriptions'] }}</span>
+                        <span>{{ @applicant['mailing_lists_subscription'] }}</span>
+                    </div>
+                    <hr>
+                </repeat>
+            </div>
+        </div>
 
 
         </body>

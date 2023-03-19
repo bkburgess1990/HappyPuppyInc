@@ -18,7 +18,7 @@ $f3 = Base::instance();
 
 //define a controller
 $controller = new Controller($f3);
-
+$dataLayer = new DataLayer();
 //define initial route
 $f3->route('GET|POST /', function () {
     //instantiate a view
@@ -91,5 +91,10 @@ $f3->route('GET|POST /surrenderForm', function () {
     $GLOBALS['controller']-> surrenderForm();
 });
 
+//define thanks route
+$f3->route('GET|POST /thanks', function () {
+    //instantiate a view
+    $GLOBALS['controller']-> thanks();
+});
 //run fat free
 $f3->run();

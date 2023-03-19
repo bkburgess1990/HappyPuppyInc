@@ -26,10 +26,17 @@ class Controller
 
     function adminPage()
     {
-        var_dump($_SESSION['customer']);
+
         //instantiate a view
         $view = new Template();
         echo $view->render("views/adminPage.php");
+    }
+
+    function thanks()
+    {
+        //instantiate a view
+        $view = new Template();
+        echo $view->render("views/thanks.html");
     }
 
     function apply()
@@ -43,36 +50,24 @@ class Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $myPet = new Customer();
-            if(Validation::validName($_POST['fname']))
-            {
+            if (Validation::validName($_POST['fname'])) {
                 $myPet->setFirstName($_POST['fname']);
-            }
-            else
-            {
+            } else {
                 $this->_f3->set('errors["fname"]', 'Your First name must be alphabetic and non-empty');
             }
-            if(Validation::validLastName($_POST['lname']))
-            {
+            if (Validation::validLastName($_POST['lname'])) {
                 $myPet->setLastName($_POST['lname']);
-            }
-            else
-            {
+            } else {
                 $this->_f3->set('errors["Lname"]', 'Your Last name must be alphabetic and non-empty');
             }
-            if(Validation::validEmail($_POST['email']))
-            {
+            if (Validation::validEmail($_POST['email'])) {
                 $myPet->setEmail($_POST['email']);
-            }
-            else
-            {
+            } else {
                 $this->_f3->set('errors["email"]', 'You must enter an email in a proper format');
             }
-            if(Validation::validPhone($_POST['phone']))
-            {
+            if (Validation::validPhone($_POST['phone'])) {
                 $myPet->setPhone($_POST['phone']);
-            }
-            else
-            {
+            } else {
                 $this->_f3->set('errors["phone"]', 'You must enter digits and xxx-xxx-xxxx');
             }
             if (Validation::validAddress($_POST['address'])) {
@@ -85,6 +80,7 @@ class Controller
             } else {
                 $this->_f3->set('errors["find"]', 'you must enter a breed');
             }
+
             if (empty($this->_f3->get('errors'))) {
                 $this->_f3->reroute('surrenderForm');
             }
@@ -133,7 +129,7 @@ class Controller
                 $this->_f3->set('errors["address"]', 'You address can not be empty');
             }
             if (empty($this->_f3->get('errors'))) {
-                $this->_f3->reroute('adminPage');
+                $this->_f3->reroute('thanks');
                 $_SESSION['customer'] = $myPet;
             }
         }
@@ -146,11 +142,9 @@ class Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $myPet = new Customer();
-            if(Validation::validDonation($_POST['amount']))
-            {
+            if (Validation::validDonation($_POST['amount'])) {
                 $myPet->setPet($_POST['amount']);
-            }
-            else{
+            } else {
                 $this->_f3->set('errors["amount"]', 'amount is invalid');
             }
             if (Validation::validName($_POST['fname'])) {

@@ -74,7 +74,7 @@ class Controller
             {
                 $this->_f3->set('errors["phone"]', 'You must enter digits and xxx-xxx-xxxx');
             }
-            if (!Validation::validAddress($_POST['address'])) {
+            if (Validation::validAddress($_POST['address'])) {
                 $myPet->setPhone($_POST['address']);
             } else {
                 $this->_f3->set('errors["address"]', 'You address can not be empty');
@@ -84,15 +84,14 @@ class Controller
             } else {
                 $this->_f3->set('errors["find"]', 'you must enter a breed');
             }
-        }
-        if (empty($this->_f3->get('errors'))) {
+            if (empty($this->_f3->get('errors'))) {
+                $this->_f3->reroute('surrenderForm');
+            }
         }
         //instantiate a view
         $view = new Template();
         echo $view->render("views/form.html");
-        if (empty($this->_f3->get('errors'))) {
-            $this->_f3->reroute('surrenderForm');
-        }
+
     }
 
     function aboutUs()
@@ -126,7 +125,7 @@ class Controller
             } else {
                 $this->_f3->set('errors["phone"]', 'You must enter digits and xxx-xxx-xxxx');
             }
-            if (!Validation::validAddress($_POST['address'])) {
+            if (Validation::validAddress($_POST['address'])) {
                 $myPet->setPhone($_POST['address']);
             } else {
                 $this->_f3->set('errors["address"]', 'You address can not be empty');

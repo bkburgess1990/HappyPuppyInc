@@ -19,6 +19,8 @@ class Controller
 
     function admin()
     {
+        $applicants = $GLOBALS['dataLayer']->getAnimal();
+        $this->_f3->set('applicants', $applicants);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/admin1.html");
@@ -242,7 +244,6 @@ class Controller
             }
 
             if (empty($this->_f3->get('errors'))) {
-                $myPets->setPrice($_POST['age']);
                 $myPets->setAge($_POST['age']);
                 $myPets->setNeutered($_POST['neutered']);
                 $myPets->setPetType($_POST['ptype']);

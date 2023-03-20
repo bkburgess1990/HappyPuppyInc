@@ -28,10 +28,10 @@ to see more info about the pet
       <span>age</span>
     </div>
     <div class = "col-1 ">
-      <span>breed</span>
+      <span>neutered</span>
     </div>
     <div class = "col-1 ">
-      <span>neutered</span>
+      <span>breed</span>
     </div>
     <div class = "col-1">
       <span>adoptable</span>
@@ -46,20 +46,22 @@ to see more info about the pet
         <span>{{ @applicant['id'] }}</span>
       </div>
       <div class = "col-2">
-        <span>{{ @applicant['firstName'] }}</span>
-        <span>{{ @applicant['lastName'] }}</span>
+        <span>{{ @applicant['petType'] }}</span>
       </div>
       <div class = "col-2 ">
-        <span>{{ @applicant['address'] }}</span>
+        <span>{{ @applicant['name'] }}</span>
       </div>
       <div class = "col-1">
-        <span>{{ @applicant['phone'] }}</span>
+        <span>{{ @applicant['age'] }}</span>
       </div>
       <div class = "col-1 ">
-        <span>{{ @applicant['email'] }}</span>
+        <span>{{ @applicant['neutered'] }}</span>
       </div>
       <div class = "col-1 ">
-        <span>{{ @applicant['message'] }}</span>
+        <span>{{ @applicant['breed'] }}</span>
+      </div>
+      <div class = "col-1">
+        <input type="checkbox" name="Lists" value="list">
       </div>
       <div class = "col-1">
         <span>${{ @applicant['price'] }}</span>

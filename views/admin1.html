@@ -1,44 +1,74 @@
 <!--
-Names: Brandon Burgess
-File Name: Adopt.html
+Names: Brandon Burgess & Jack Zeng
+File Name: reservationData.html
 Date: 2/11/2023
 Description: adoption page where users will be able to look through animals to adopt and click on them
 to see more info about the pet
 -->
 
-<include href="views/header.html"></include>
-<!--container-fluid-->
-<div class="container-fluid">
-  <div class = "row">
-    <div class = "col-lg-12 breadcrumbcontainer">
-      <!-- breadcrumb -->
-      <ol class = "breadcrumb">
-        <li class = "breadcrumb-active breadcrumb-item">Administration</li>
-      </ol>
-    </div>
-  </div>
 
+<include href="views/header.html"></include>
+
+
+
+<body>
+<div class = "container-fluid">
   <div class = "row">
-    <div class = "col-lg-12">
-      <h1>Administration Login</h1>
-    </div> <!-- end of col -->
-  </div>  <!-- end of row -->
-</div> <!-- end of CF -->
-<div class = "row">
-  <div class = "col-12">
-    <!-- Contact/Area Container -->
-    <div class="w3-container" id="where" style="padding-bottom:32px;">
-      <div class="w3-content" style="max-width:700px">
-        <form action="adminPage.php"  method="post">
-          <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Username" required name="uname" value=""></p>
-          <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="Password" required name="psw" value=""></p>
-          <?php if (isset($error)) { ?>
-          <p class="error"><?php echo $error ?></p>
-          <?php } ?>
-          <p><button class="w3-button w3-black" type="submit" style = "width:100%; margin-top: 25px; margin-bottom: 25px; font-weight: bold; font-size: 20px;">Login</button></p>
-        </form> <!-- end of form -->
-      </div> <!-- end of w3 content -->
-    </div> <!--  end of Container -->
+    <div class = "col-1"></div>
+    <div class = "col-1 ">
+      <span>ID</span>
+    </div>
+    <div class = "col-2">
+      <span>petType</span>
+    </div>
+    <div class = "col-2 ">
+      <span>name</span>
+    </div>
+    <div class = "col-1">
+      <span>age</span>
+    </div>
+    <div class = "col-1 ">
+      <span>breed</span>
+    </div>
+    <div class = "col-1 ">
+      <span>neutered</span>
+    </div>
+    <div class = "col-1">
+      <span>adoptable</span>
+    </div>
+    <div class = "col-1 ">
+      <span>price</span>
+    </div>
+    <hr>
+    <repeat group="{{ @applicants }}" value="{{ @applicant }}">
+      <div class = "col-1"></div>
+      <div class = "col-1 ">
+        <span>{{ @applicant['id'] }}</span>
+      </div>
+      <div class = "col-2">
+        <span>{{ @applicant['firstName'] }}</span>
+        <span>{{ @applicant['lastName'] }}</span>
+      </div>
+      <div class = "col-2 ">
+        <span>{{ @applicant['address'] }}</span>
+      </div>
+      <div class = "col-1">
+        <span>{{ @applicant['phone'] }}</span>
+      </div>
+      <div class = "col-1 ">
+        <span>{{ @applicant['email'] }}</span>
+      </div>
+      <div class = "col-1 ">
+        <span>{{ @applicant['message'] }}</span>
+      </div>
+      <div class = "col-1">
+        <span>${{ @applicant['price'] }}</span>
+      </div>
+      <hr>
+    </repeat>
   </div>
 </div>
-      <include href="views/footer.html"></include>
+
+
+</body>
+<include href="views/footer.html"></include>

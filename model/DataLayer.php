@@ -1,7 +1,7 @@
 <?php
 
 //needs a PDO_Config.php in cPanel file manager
-require_once ($_SERVER['DOCUMENT_ROOT'].'/../pdo_config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/../pdo-config.php');
 
 class DataLayer
 {
@@ -64,7 +64,7 @@ class DataLayer
     function getApplicants()
     {
         //1. Define the query
-        $sql = "SELECT * FROM customers";
+        $sql = "SELECT * FROM customers ORDER BY lastName";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -78,8 +78,58 @@ class DataLayer
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function insertAnimal()
+    {
+        // 1. Define a query
+        $sql = "INSERT INTO pet (petType,name,age,breed,neutered,adoptable,price) VALUES 
+        (:petType,:name,:age,:breed,:neutered,:adoptable,:price)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. bind the parameters
+        $petType = $_SESSION['pets']->getPetType();
+        $name = $_SESSION['pets']->getName();
+        $age = $_SESSION['pets']->getAge();
+        $breed = $_SESSION['pets']->getBreed();
+        $neutered = $_SESSION['pets']->getNeutered();
+        $adoptable = $_SESSION['pets']->getAdoptable();
+        $price = "100";
+
+        $statement->bindParam(':petType', $petType);
+        $statement->bindParam(':name', $name);
+        $statement->bindParam(':age', $age);
+        $statement->bindParam(':breed', $breed);
+        $statement->bindParam(':neutered', $neutered);
+        $statement->bindParam(':adoptable', $adoptable);
+        $statement->bindParam(':price', $price);
 
 
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        $id = $this->_dbh->lastInsertId();
+        return $id;
+
+    }
+
+    function getAnimal()
+    {
+        //1. Define the query
+        $sql = "SELECT * FROM pet ORDER BY name";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
 

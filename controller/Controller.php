@@ -32,15 +32,17 @@ class Controller
         $this->_f3->set('applicants', $applicants);
         //instantiate a view
         $view = new Template();
-        echo $view->render("views/adminPage.php");
+        echo $view->render("views/adminPage.html");
     }
 
     function thanks()
     {
         $layer = new DataLayer();
         //Write to Database
-        $id = $layer->insertApplicant($_SESSION['customer']);
-        echo "Order ID: $id";
+//        $id = $layer->insertApplicant($_SESSION['customer']);
+        $di = $layer->insertAnimal($_SESSION['pets']);
+        echo "Order ID: $di";
+        var_dump($_SESSION['pets']);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/thanks.html");
@@ -78,17 +80,18 @@ class Controller
                 $this->_f3->set('errors["phone"]', 'You must enter digits and xxx-xxx-xxxx');
             }
             if (Validation::validAddress($_POST['address'])) {
-                $myPet->setPhone($_POST['address']);
+                $myPet->setAddress($_POST['address']);
             } else {
                 $this->_f3->set('errors["address"]', 'You address can not be empty');
             }
             if (Validation::validWhere($_POST['find'])) {
-                $myPet->setPhone($_POST['find']);
+                $myPet->setPet($_POST['find']);
             } else {
-                $this->_f3->set('errors["find"]', 'you must enter a breed');
+                $this->_f3->set('errors["find"]', 'you must enter a kind');
             }
 
             if (empty($this->_f3->get('errors'))) {
+                $_SESSION['customer'] = $myPet;
                 $this->_f3->reroute('surrenderForm');
             }
         }
@@ -149,7 +152,7 @@ class Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $myPet = new Customer();
             if (Validation::validDonation($_POST['amount'])) {
-                $myPet->setPet($_POST['amount']);
+                $myPet->setPrice($_POST['amount']);
             } else {
                 $this->_f3->set('errors["amount"]', 'amount is invalid');
             }
@@ -174,22 +177,23 @@ class Controller
                 $this->_f3->set('errors["phone"]', 'You must enter digits and xxx-xxx-xxxx');
             }
             if (Validation::validAddress($_POST['address'])) {
-                $myPet->setPhone($_POST['address']);
+                $myPet->setAddress($_POST['address']);
             } else {
                 $this->_f3->set('errors["address"]', 'You address can not be empty');
             }
             if (Validation::validCreditCard($_POST['credit'])) {
-                $myPet->setPhone($_POST['credit']);
+                $credit = $_POST['credit'];
             } else {
                 $this->_f3->set('errors["credit"]', 'You credit card can not be empty');
             }
             if (Validation::validZipCode($_POST['zip'])) {
-                $myPet->setPhone($_POST['zip']);
+                $zip = $_POST['zip'];
             } else {
                 $this->_f3->set('errors["zip"]', 'You zip code can not be empty');
             }
             if (empty($this->_f3->get('errors'))) {
-                $this->_f3->reroute('adminPage');
+                $_SESSION['customer'] = $myPet;
+                $this->_f3->reroute('thanks');
             }
         }
         //instantiate a view
@@ -213,6 +217,39 @@ class Controller
 
     function surrenderForm()
     {
+//        $layer = new DataLayer();
+//        //Write to Database
+//        $id = $layer->insertApplicant($_SESSION['customer']);
+//        echo "Order ID: $id";
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if($_POST['ptype'] == "Cat")
+            {
+                $myPets = new Cat();
+            }
+            else
+            {
+                $myPets = new Dog();
+            }
+            if (Validation::validName($_POST['pname'])) {
+                $myPets->setName($_POST['pname']);
+            } else {
+                $this->_f3->set('errors["fname"]', 'Your pet name must be alphabetic and non-empty');
+            }
+            if (Validation::validAddress($_POST['breed'])) {
+                $myPets->setBreed($_POST['breed']);
+            } else {
+                $this->_f3->set('errors["breed"]', 'You breed can not be empty');
+            }
+
+            if (empty($this->_f3->get('errors'))) {
+                $myPets->setPrice($_POST['age']);
+                $myPets->setAge($_POST['age']);
+                $myPets->setNeutered($_POST['neutered']);
+                $myPets->setPetType($_POST['ptype']);
+                $_SESSION['pets'] = $myPets;
+                $this->_f3->reroute('thanks');
+            }
+        }
         //instantiate a view
         $view = new Template();
         echo $view->render("views/surrenderForm.html");

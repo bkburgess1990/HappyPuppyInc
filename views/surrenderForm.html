@@ -35,9 +35,9 @@ Description: This page is a surrender form, where users will fill out informatio
           <br>
           <input type="text" id="pname" name="pname">
           <div>
-            <check if="{{isset(@errors['pname'])}}">
+            <check if="{{isset(@errors['fname'])}}">
               <span class="err">
-                {{ @errors['pname']}}
+                {{ @errors['fname']}}
               </span>
             </check>
           </div>
@@ -61,11 +61,6 @@ Description: This page is a surrender form, where users will fill out informatio
             <option value="12">12</option>
           </select>
           <div>
-            <check if="{{isset(@errors['age'])}}">
-              <span class="err">
-                {{ @errors['age']}}
-              </span>
-            </check>
           </div>
         </div>
         <!-- Pet Breed-->
@@ -74,7 +69,7 @@ Description: This page is a surrender form, where users will fill out informatio
           <br>
           <input type="text" id="breed" name="breed">
           <div>
-            <check if="{{isset(@errors['pname'])}}">
+            <check if="{{isset(@errors['breed'])}}">
               <span class="err">
                 {{ @errors['breed']}}
               </span>

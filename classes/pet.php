@@ -11,7 +11,7 @@ class Pet
     private $_adoptable;
 
     //constructor
-    function __construct($_petType, $_name, $_age, $_breed, $_neutered, $_adoptable)
+    function __construct($_petType = "", $_name = "", $_age = "", $_breed = "", $_neutered = "", $_adoptable = "")
     {
         $this->_petType = $_petType;
         $this->_name = $_name;

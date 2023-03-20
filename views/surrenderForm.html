@@ -35,9 +35,9 @@ Description: This page is a surrender form, where users will fill out informatio
           <br>
           <input type="text" id="pname" name="pname">
           <div>
-            <check if="{{isset(@errors['fname'])}}">
+            <check if="{{isset(@errors['pname'])}}">
               <span class="err">
-                {{ @errors['fname']}}
+                {{ @errors['pname']}}
               </span>
             </check>
           </div>

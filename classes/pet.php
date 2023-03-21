@@ -1,5 +1,8 @@
 <?php
 
+/**
+ *
+ */
 class Pet
 {
     //fields
@@ -10,7 +13,14 @@ class Pet
     private $_neutered;
     private $_adoptable;
 
-    //constructor
+    /** constructor
+     * @param $_petType
+     * @param $_name
+     * @param $_age
+     * @param $_breed
+     * @param $_neutered
+     * @param $_adoptable
+     */
     function __construct($_petType = "", $_name = "", $_age = "", $_breed = "", $_neutered = "", $_adoptable = "")
     {
         $this->_petType = $_petType;
@@ -23,6 +33,7 @@ class Pet
 
     /**
      * @return
+     * returns the type of pet (cat/dog)
      */
     public function getPetType()
     {
@@ -31,6 +42,7 @@ class Pet
 
     /**
      * @param $petType
+     * sets the pet type
      */
     public function setPetType($petType)
     {
@@ -39,6 +51,7 @@ class Pet
 
     /**
      * @return
+     * returns the pet's name
      */
     public function getName()
     {
@@ -47,6 +60,7 @@ class Pet
 
     /**
      * @param $name
+     * sets the pet's name
      */
     public function setName($name)
     {
@@ -55,6 +69,7 @@ class Pet
 
     /**
      * @return
+     * returns the pet's age
      */
     public function getAge()
     {
@@ -63,6 +78,7 @@ class Pet
 
     /**
      * @param $age
+     * sets the pet's age
      */
     public function setAge($age)
     {
@@ -71,6 +87,7 @@ class Pet
 
     /**
      * @return
+     * returns the pet's breed
      */
     public function getBreed()
     {
@@ -79,6 +96,7 @@ class Pet
 
     /**
      * @param $breed
+     * sets the pet's breed
      */
     public function setBreed($breed)
     {
@@ -87,6 +105,7 @@ class Pet
 
     /**
      * @return boolean
+     * returns whether or not the pet is neutered/spayed
      */
     public function getNeutered()
     {
@@ -95,6 +114,7 @@ class Pet
 
     /**
      * @param $neutered
+     * sets whether or not the pet is neutered/spayed
      */
     public function setNeutered($neutered)
     {
@@ -103,6 +123,7 @@ class Pet
 
     /**
      * @return
+     * returns adoption status (this needs to be set in the admin page)
      */
     public function getAdoptable()
     {
@@ -111,6 +132,7 @@ class Pet
 
     /**
      * @param $adoptable
+     * sets the adoption status of the animal (Adoptable/not adoptable) based on factors like vax status, etc. (set by admin page)
      */
     public function setAdoptable($adoptable)
     {

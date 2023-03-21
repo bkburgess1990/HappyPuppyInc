@@ -5,10 +5,10 @@ class Dog extends Pet
 
     //fields
     private $_price;
-    //constructor
 
-    /**
+    /** constructor
      * @return
+     * returns the price to adopt the animal
      */
     public function getPrice()
     {
@@ -17,6 +17,7 @@ class Dog extends Pet
 
     /**
      * @param $price
+     * sets the price to adopt the animal. This is determined by the pet type and age.
      */
     public function setPrice($price)
     {
@@ -29,6 +30,7 @@ class Dog extends Pet
                 $price = 100;
             }
         }
-        return $price;
+        $_price = $price;
+        return $_price;
     }
 }

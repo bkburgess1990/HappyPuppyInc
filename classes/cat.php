@@ -8,6 +8,7 @@ class Cat extends Pet
 
     /**
      * @return
+     * returns the price to adopt
      */
     public function getPrice()
     {
@@ -16,6 +17,7 @@ class Cat extends Pet
 
     /**
      * @param $price
+     * sets the adoption price. This is determined by pet type and age
      */
     public function setPrice($price)
     {
@@ -29,5 +31,4 @@ class Cat extends Pet
             }
         }
     }
-    //methods
 }

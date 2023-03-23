@@ -38,7 +38,14 @@ class Customer
     private $_message;
     private $_price;
     //constructor
-
+    /** constructor
+     * @param $_firstName
+     * @param $_lastname
+     * @param $_address
+     * @param $_breed
+     * @param $_neutered
+     * @param $_adoptable
+     */
     function __construct($firstName = "", $lastName = "", $address = "", $phone = "", $email = "", $pet = "", $message = "", $price = " ")
     {
         $this->_firstName = $firstName;
@@ -52,7 +59,7 @@ class Customer
     }
 
     /**
-     * @return
+     * @return $_firstName
      */
     public function getFirstName()
     {
@@ -68,7 +75,7 @@ class Customer
     }
 
     /**
-     * @return
+     * @return $_LastName
      */
     public function getLastName()
     {

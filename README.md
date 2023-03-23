@@ -52,22 +52,6 @@
     with no confusion.
 
 - Your most current UML class diagram
-    Customer:
-      -    firstName;
-      -    lastName;
-      -    address;
-      -    phone;
-      -    email;
-      -    pet;
-      -    message;
-      -    price;
-    Pet:
-      -    petType;
-      -    name;
-      -    age;
-      -    breed;
-      -    neutered;
-      -    adoptable;
-    Cat (inh)
+
 
 - Your admin login username and password, if applicable

@@ -41,10 +41,8 @@ class Controller
     {
         $layer = new DataLayer();
         //Write to Database
-//        $id = $layer->insertApplicant($_SESSION['customer']);
+        $id = $layer->insertApplicant($_SESSION['customer']);
         $di = $layer->insertAnimal($_SESSION['pets']);
-        echo "Order ID: $di";
-        var_dump($_SESSION['pets']);
         //instantiate a view
         $view = new Template();
         echo $view->render("views/thanks.html");

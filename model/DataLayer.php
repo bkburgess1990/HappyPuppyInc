@@ -1,4 +1,28 @@
 <?php
+/**
+ *
+ * This is a dataLayer class. It contains all the data, and it inserts data into
+ * database
+ *
+ * PHP version 5
+ *
+ * LICENSE: This source file is subject to version 3.01 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_01.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net, so we can mail you a copy immediately.
+ *
+ * @category   CategoryName
+ * @package    PackageName
+ * @author     zeng.zhenhuai@student.greenriver.edu
+ * @author     Burgess.Brandon@student.greenriver.edu
+ * @copyright  1997-2005 The PHP Group
+ * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version    SVN: $Id$
+ * @link       http://pear.php.net/package/PackageName
+ * @see        NetOther, Net_Sample::Net_Sample()
+ * @since      File available since Release 1.2.0
+ */
 
 //needs a PDO_Config.php in cPanel file manager
 require_once($_SERVER['DOCUMENT_ROOT'] . '/../pdo-config.php');
@@ -7,7 +31,9 @@ class DataLayer
 {
     // Database connection object
     private $_dbh;
-
+    /**
+     * a constructor
+     */
     function __construct()
     {
         try {
@@ -20,6 +46,9 @@ class DataLayer
         }
     }
 
+    /**
+     * this method inserts data into database.
+     */
     function insertApplicant()
     {
         // 1. Define a query
@@ -77,7 +106,9 @@ class DataLayer
         //5. Process the results
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    /**
+     * this method inserts animals' data into database.
+     */
     function insertAnimal()
     {
         // 1. Define a query
@@ -113,7 +144,9 @@ class DataLayer
         return $id;
 
     }
-
+    /**
+     * this method gets data from database
+     */
     function getAnimal()
     {
         //1. Define the query
@@ -132,7 +165,9 @@ class DataLayer
     }
 
 
-
+    /**
+     * this method gets pet data from array.
+     */
         static function getPets()
     {
         return array("Dogs", "Cats", "Rabbits");

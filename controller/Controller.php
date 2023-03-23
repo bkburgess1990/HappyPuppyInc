@@ -28,19 +28,30 @@ class Controller
 
     private $_f3; //Fat-Free object
 
-    /**/
+    /**
+     * a constructor
+     *
+     * @param type $f3
+     */
     function __construct($f3)
     {
         $this->_f3 = $f3;
     }
 
+    /*
+     *  it direct you to home page
+     * */
     function home()
     {
         //Instantiate a view
         $view = new Template();
         echo $view->render("views/home.html");
     }
-
+    /**
+     * this method direct you to admin page
+     *
+     *
+     */
     function admin()
     {
         $applicants = $GLOBALS['dataLayer']->getAnimal();
@@ -49,7 +60,9 @@ class Controller
         $view = new Template();
         echo $view->render("views/admin1.html");
     }
-
+    /**
+     * this method direct you to adminPage
+     */
     function adminPage()
     {
 
@@ -61,6 +74,9 @@ class Controller
         echo $view->render("views/adminPage.html");
     }
 
+    /**
+     * this method direct you to thanks page
+     */
     function thanks()
     {
         $layer = new DataLayer();
@@ -71,7 +87,9 @@ class Controller
         $view = new Template();
         echo $view->render("views/thanks.html");
     }
-
+    /**
+     * this method direct you to apply page
+     */
     function apply()
     {
         //instantiate a view
@@ -79,6 +97,9 @@ class Controller
         echo $view->render("views/apply.html");
     }
 
+    /**
+     * this method direct you to form page
+     */
     function form()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -125,13 +146,18 @@ class Controller
 
     }
 
+    /**
+     * this method direct you to aboutUs page
+     */
     function aboutUs()
     {
         //instantiate a view
         $view = new Template();
         echo $view->render("views/aboutUs.html");
     }
-
+    /**
+     * this method direct you to adopt page
+     */
     function adopt()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -171,6 +197,9 @@ class Controller
         echo $view->render("views/Adopt.html");
     }
 
+    /**
+     * this method direct you to donation page
+     */
     function donation()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -225,6 +254,9 @@ class Controller
         echo $view->render("views/Donate.html");
     }
 
+    /**
+     * this method direct you to statistic page
+     */
     function statistic()
     {
         //instantiate a view
@@ -232,13 +264,18 @@ class Controller
         echo $view->render("views/Stats.html");
     }
 
+    /**
+     * this method direct you to contact page
+     */
     function contact()
     {
         //instantiate a view
         $view = new Template();
         echo $view->render("views/contact.html");
     }
-
+    /**
+     * this method direct you to surrenderForm page
+     */
     function surrenderForm()
     {
 //        $layer = new DataLayer();

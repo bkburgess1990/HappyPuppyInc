@@ -1,4 +1,30 @@
 <?php
+/**
+ * customer class has setters and getters class. it creates a class for customer.
+ *
+ * this class has setter and getter methods.
+ *
+ * PHP version 5
+ *
+ * LICENSE: This source file is subject to version 3.01 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_01.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net, so we can mail you a copy immediately.
+ *
+ * @category   CategoryName
+ * @package    PackageName
+ * @author     zeng.zhenhuai@student.greenriver.edu
+ * @author     Burgess.Brandon@student.greenriver.edu
+ * @copyright  1997-2005 The PHP Group
+ * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version    SVN: $Id$
+ * @link       http://pear.php.net/package/PackageName
+ * @see        NetOther, Net_Sample::Net_Sample()
+ * @since      File available since Release 1.2.0
+ */
+
+
 
 class Customer
 {
@@ -12,7 +38,14 @@ class Customer
     private $_message;
     private $_price;
     //constructor
-
+    /** constructor
+     * @param $_firstName
+     * @param $_lastname
+     * @param $_address
+     * @param $_breed
+     * @param $_neutered
+     * @param $_adoptable
+     */
     function __construct($firstName = "", $lastName = "", $address = "", $phone = "", $email = "", $pet = "", $message = "", $price = " ")
     {
         $this->_firstName = $firstName;
@@ -26,7 +59,7 @@ class Customer
     }
 
     /**
-     * @return
+     * @return $_firstName
      */
     public function getFirstName()
     {
@@ -42,7 +75,7 @@ class Customer
     }
 
     /**
-     * @return
+     * @return $_LastName
      */
     public function getLastName()
     {

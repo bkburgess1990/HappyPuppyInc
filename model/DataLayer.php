@@ -1,7 +1,7 @@
 <?php
 
 //needs a PDO_Config.php in cPanel file manager
-require_once ($_SERVER['DOCUMENT_ROOT'].'/../pdo_config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/../pdo-config.php');
 
 class DataLayer
 {
